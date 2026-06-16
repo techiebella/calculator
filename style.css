@@ -1,0 +1,525 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* =========================
+   DARK MODE (DEFAULT)
+========================= */
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #050505,
+        #0f172a,
+        #111827,
+        #020617
+    );
+
+    color:white;
+    transition:.4s ease;
+}
+
+/* =========================
+   LIGHT MODE (PASTEL)
+========================= */
+body.light{
+    background:
+    linear-gradient(
+        135deg,
+        #fde2e4,
+        #e0f2fe,
+        #ede9fe,
+        #dcfce7
+    );
+
+    color:#1f2937;
+}
+
+/* =========================
+   APP CONTAINER
+========================= */
+.app-container{
+    display:flex;
+    gap:25px;
+    align-items:flex-start;
+}
+
+/* =========================
+   CALCULATOR
+========================= */
+.calculator{
+    width:100%;
+    max-width:700px;
+
+    padding:30px;
+    border-radius:30px;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(30px);
+    -webkit-backdrop-filter:blur(30px);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+        0 0 25px rgba(6,182,212,.08),
+        0 0 60px rgba(139,92,246,.15),
+        0 15px 40px rgba(0,0,0,.5);
+
+    animation:floatIn .6s ease;
+}
+
+body.light .calculator{
+    background:rgba(255,255,255,.75);
+
+    border:1px solid rgba(255,255,255,.5);
+
+    box-shadow:
+        0 10px 35px rgba(255,182,193,.25),
+        0 10px 35px rgba(173,216,230,.25);
+}
+
+/* =========================
+   HEADER
+========================= */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.title{
+    font-size:2rem;
+    font-weight:700;
+}
+
+/* =========================
+   THEME BUTTON
+========================= */
+.theme-btn{
+    width:60px;
+    height:60px;
+
+    border:none;
+    border-radius:18px;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    font-size:1.3rem;
+
+    cursor:pointer;
+
+    transition:.4s ease;
+}
+
+.theme-btn:hover{
+    transform:rotate(180deg) scale(1.05);
+}
+
+body.light .theme-btn{
+    background:white;
+    color:#7c3aed;
+}
+
+/* =========================
+   DISPLAY
+========================= */
+#display{
+    width:100%;
+    height:100px;
+
+    border:none;
+    outline:none;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.05);
+
+    color:#67e8f9;
+
+    text-align:right;
+
+    font-size:3rem;
+    font-weight:700;
+
+    padding:20px;
+
+    margin-bottom:25px;
+
+    letter-spacing:1px;
+
+    text-shadow:
+        0 0 10px rgba(103,232,249,.6);
+
+    box-shadow:
+        inset 0 4px 12px rgba(0,0,0,.3);
+
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+
+body.light #display{
+    background:rgba(255,255,255,.65);
+    color:#7c3aed;
+    text-shadow:none;
+}
+
+/* =========================
+   BUTTON GRID
+========================= */
+.buttons{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+}
+
+button{
+    height:75px;
+
+    border:none;
+    border-radius:20px;
+
+    background:rgba(255,255,255,.06);
+
+    color:white;
+
+    font-size:1.4rem;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:
+    transform .2s ease,
+    background .2s ease,
+    box-shadow .2s ease;
+}
+
+button:hover{
+    transform:translateY(-3px);
+}
+
+button:active{
+    transform:scale(.93);
+}
+
+/* =========================
+   LIGHT MODE NUMBER BUTTONS
+========================= */
+body.light button:not(.clear):not(.operator):not(.equal){
+    background:
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #f8fafc
+    );
+
+    color:#374151;
+}
+
+body.light button:not(.clear):not(.operator):not(.equal):hover{
+    background:
+    linear-gradient(
+        135deg,
+        #fdf2f8,
+        #eef2ff
+    );
+}
+
+/* =========================
+   SPECIAL BUTTONS
+========================= */
+.zero{
+    grid-column:span 2;
+}
+
+/* CLEAR */
+.clear{
+    background:
+    linear-gradient(
+        135deg,
+        #ff4d6d,
+        #ef4444
+    );
+
+    color:white;
+}
+
+.clear:hover{
+    box-shadow:
+        0 0 25px #ef4444;
+}
+
+/* OPERATOR */
+.operator{
+    background:
+    linear-gradient(
+        135deg,
+        #06b6d4,
+        #3b82f6
+    );
+
+    color:white;
+}
+
+.operator:hover{
+    box-shadow:
+        0 0 25px #06b6d4;
+}
+
+/* EQUAL */
+.equal{
+    background:
+    linear-gradient(
+        135deg,
+        #22c55e,
+        #10b981
+    );
+
+    color:white;
+}
+
+.equal:hover{
+    box-shadow:
+        0 0 25px #22c55e;
+}
+
+/* =========================
+   HISTORY PANEL
+========================= */
+.history-panel{
+    width:320px;
+    min-height:250px;
+
+    padding:25px;
+    border-radius:25px;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(30px);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+        0 0 25px rgba(6,182,212,.08),
+        0 0 60px rgba(139,92,246,.15);
+
+    animation:floatIn .8s ease;
+}
+
+body.light .history-panel{
+    background:rgba(255,255,255,.75);
+
+    border:1px solid rgba(255,255,255,.5);
+}
+
+.history-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.history-header h3{
+    font-size:1.4rem;
+}
+
+#clearHistory{
+    border:none;
+    padding:10px 15px;
+    border-radius:10px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff4d6d,
+        #ef4444
+    );
+
+    color:white;
+    cursor:pointer;
+}
+
+#historyList{
+    list-style:none;
+    max-height:400px;
+    overflow-y:auto;
+}
+
+#historyList li{
+    padding:12px;
+    margin-bottom:10px;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.05);
+
+    border-left:3px solid #06b6d4;
+
+    transition:.2s ease;
+}
+
+#historyList li:hover{
+    transform:translateX(5px);
+}
+
+body.light #historyList li{
+    background:
+    linear-gradient(
+        135deg,
+        #fdf2f8,
+        #eef2ff
+    );
+
+    border-left:3px solid #8b5cf6;
+
+    color:#374151;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+#historyList::-webkit-scrollbar{
+    width:8px;
+}
+
+#historyList::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+#historyList::-webkit-scrollbar-thumb{
+    background:#64748b;
+    border-radius:20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer{
+    text-align:center;
+    margin-top:20px;
+
+    font-size:.9rem;
+    opacity:.8;
+}
+
+/* =========================
+   HOVER CARD EFFECT
+========================= */
+.calculator:hover,
+.history-panel:hover{
+    box-shadow:
+        0 0 30px rgba(6,182,212,.2),
+        0 0 50px rgba(139,92,246,.2);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes floatIn{
+    from{
+        opacity:0;
+        transform:
+        translateY(25px)
+        scale(.95);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        translateY(0)
+        scale(1);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:900px){
+
+    .app-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .history-panel{
+        width:100%;
+        max-width:500px;
+    }
+}
+
+@media(max-width:600px){
+
+    .calculator{
+        padding:20px;
+    }
+
+    .history-panel{
+        width:100%;
+    }
+
+    #display{
+        height:80px;
+        font-size:2.2rem;
+    }
+
+    button{
+        height:65px;
+        font-size:1.2rem;
+    }
+
+    .theme-btn{
+        width:50px;
+        height:50px;
+    }
+
+    .title{
+        font-size:1.6rem;
+    }
+}
+
+/* Scientific Mode */
+
+.scientific-buttons{
+    display:none;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    margin-bottom:12px;
+}
+
+.scientific-buttons.active{
+    display:grid;
+}
+
+.scientific-buttons button{
+    height:60px;
+    font-size:1rem;
+
+    background:
+    linear-gradient(
+        135deg,
+        #8b5cf6,
+        #06b6d4
+    );
+
+    color:white;
+}
