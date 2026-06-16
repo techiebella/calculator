@@ -1,4 +1,4 @@
-# 🚀 ByteForge Calculator
+# 🚀Calculator
 
 A modern, responsive, and feature-rich calculator built using **HTML, CSS, and JavaScript**. Designed with a beautiful glassmorphism interface, dark/light themes, scientific functions, memory operations, and calculation history.
 
