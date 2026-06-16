@@ -6,7 +6,7 @@ A modern, responsive, and feature-rich calculator built using **HTML, CSS, and J
 
 Add your GitHub Pages link here:
 
-https://techiebella.github.io/calculator/
+https://github.com/techiebella/calculator.git
 
 ---
 
