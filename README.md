@@ -11,13 +11,16 @@ https://techiebella.github.io/calculator/
 ---
 
 ## 📸 Preview
-Scientific Calculator Dark Mode 
-<img width="1902" height="913" alt="image" src="https://github.com/user-attachments/assets/a0196854-e956-4427-93c8-7d9f53a30423" />
-Scientific Calculator Light Mode
-<img width="1718" height="907" alt="image" src="https://github.com/user-attachments/assets/9837751a-1bac-41e8-a2a2-a12730945adf" />
-Basic Calculator
-<img width="1041" height="712" alt="image" src="https://github.com/user-attachments/assets/7c1c1b8b-213d-4164-a652-870039a7c8e9" />
-<img width="1027" height="731" alt="image" src="https://github.com/user-attachments/assets/95c3f6d9-1509-436a-a058-35be1cd91b1a" />
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a0196854-e956-4427-93c8-7d9f53a30423" width="45%">
+  <img src="https://github.com/user-attachments/assets/9837751a-1bac-41e8-a2a2-a12730945adf" width="45%">
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7c1c1b8b-213d-4164-a652-870039a7c8e9" width="45%">
+  <img src="https://github.com/user-attachments/assets/95c3f6d9-1509-436a-a058-35be1cd91b1a" width="45%">
+</p>
 
 
 ---
@@ -157,7 +160,7 @@ This project is licensed under the MIT License.
 Frontend Developer | Web Designer | JavaScript Enthusiast
 
 GitHub:
-https://github.com/yourusername
+https://github.com/techiebella
 
 ---
 
